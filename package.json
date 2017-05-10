@@ -1,0 +1,23 @@
+{
+  "name": "stutor",
+  "version": "1.0.0",
+  "description": "Thanks for downloading this theme!",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "bcryptjs": "*",
+    "body-parser": "*",
+    "cookie-parser": "^1.4.1",
+    "express": "*",
+    "express-messages": "*",
+    "mongodb": "*",
+    "mongoose": "*",
+    "nodemon": "^1.11.0",
+    "angular": "^1.5.9"
+  },
+  "author": "",
+  "license": "ISC"
+}
