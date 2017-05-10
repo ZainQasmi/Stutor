@@ -1,0 +1,269 @@
+
+     <nav class="navbar navbar-default">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header w3l_logo">
+                <button type="button" class="navbar-toggle collapsed navbar-toggle1" data-toggle="collapse" data-target="#bs-megadropdown-tabs">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>  
+            </div> 
+            <div class="collapse navbar-collapse" id="bs-megadropdown-tabs">
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a ng-click="students()" class="">Students</a></li>
+                    <li><a ng-click="settings()" class="">Profile</a></li>
+                    <li><a ng-href="/" class="">Logout</a></li>	
+                </ul>
+            </div>
+        </nav>
+    
+  <div class="container">  
+    <div class="row profile" ng-controller="teacherCtrl" ng-init="getSubjects()">
+		<div class="col-md-3">
+			<div class="profile-sidebar">
+				<!-- SIDEBAR USERPIC -->
+				<div class="profile-userpic">
+					<img src="http://keenthemes.com/preview/metronic/theme/assets/admin/pages/media/profile/profile_user.jpg" class="img-responsive" alt="">
+				</div>
+				<!-- END SIDEBAR USERPIC -->
+				<!-- SIDEBAR USER TITLE -->
+				<div class="profile-usertitle">
+					<div class="profile-usertitle-name">
+						Marcus Doe
+					</div>
+					<div class="profile-usertitle-job">
+						Teacher
+					</div>
+				</div>
+				<!-- END SIDEBAR USER TITLE -->
+				<!-- SIDEBAR BUTTONS -->
+				<div class="profile-userbuttons">
+					<button type="button" class="btn btn-success btn-sm">Follow</button>
+					<button type="button" class="btn btn-danger btn-sm">Message</button>
+				</div>
+				<!-- END SIDEBAR BUTTONS -->
+				<!-- SIDEBAR MENU -->
+				<div class="profile-usermenu">
+					<ul class="nav">
+						<li >
+							<a ng-click='settings()'>
+							<i class="glyphicon glyphicon-home"></i>
+							Overview </a>
+						</li>
+						<li class="active">
+							<a ng-click='account_settings()'>
+							<i class="glyphicon glyphicon-user"></i>
+							Account Settings </a>
+						</li>
+					</ul>
+				</div>
+				<!-- END MENU -->
+			</div>
+		</div>
+		<div class="col-md-9">
+            <div class="profile-content">
+			   <div class='row'>
+                    <div class="col-md-4 col-xs-6">
+                        <div class="small-box" style="background-color:#dd5827">
+                            <div class="inner">
+                                <h3>15</h3>
+                                <p>Total Subjects</p>
+                            </div>
+                        </div>
+                    </div>
+                     <div class="col-md-4 col-xs-6">
+                        <div class="small-box" style="background-color:#dd5827">
+                            <div class="inner">
+                                <h3>15</h3>
+                                <p>Total Contacts</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="alert alert-success" ng-show="showAlert">
+				<button type="button" class="close" ng-click="hide()">×</button>
+				<strong>{{message}}</strong>
+			</div>
+                <form ng-submit="updateTeacher()" ng-init="getTeacherInfo()">
+                <div class="row">
+                    <div class="col-md-3 col-xs-12">
+                        <div class="form-group">
+                            <label for="usr">First Name:</label>
+                            <input type="text" class="form-control" ng-model="userInfo.first_name" >
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-3 col-xs-12">
+                        <div class="form-group">
+                            <label for="usr">Last Name:</label>
+                            <input type="text" class="form-control" ng-model="userInfo.last_name" >
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-3 col-xs-12">
+                        <div class="form-group">
+                            <label for="usr">Email:</label>
+                            <input type="text" class="form-control" ng-model="userInfo.email" >
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-3 col-xs-12">
+                        <div class="form-group">
+                            <label for="usr">Area</label>
+                            <input type="text" class="form-control" ng-model="userInfo.location" >
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-3 col-xs-12">
+                        <div class="form-group">
+                            <label for="usr">City</label>
+                            <input type="text" class="form-control" ng-model="userInfo.city" >
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-3 col-xs-12">
+                        <div class="form-group">
+                            <label for="usr">Country</label>
+                            <input type="text" class="form-control" ng-model="userInfo.country" >
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-3 col-xs-12">
+                        <div class="form-group">
+                            <label for="usr">Password:</label>
+                            <input type="text" class="form-control" ng-model="userInfo.password" >
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-3 col-xs-12">
+                        <div class="form-group">
+                            <label for="usr">Confirm Password</label>
+                            <input type="text" class="form-control" ng-model="userInfo.cpassword" >
+                        </div>
+                    </div>
+                </div>
+
+                <button type="submit" value='Edit' class='btn btn-primary'>Edit<button>
+
+            </div>
+		</div>
+	</div>
+</div>
+
+
+<style> 
+/* Profile container */
+.profile {
+  margin: 20px 0;
+}
+
+/* Profile sidebar */
+.profile-sidebar {
+  padding: 20px 0 10px 0;
+  background: #fff;
+}
+
+.profile-userpic img {
+  float: none;
+  margin: 0 auto;
+  width: 50%;
+  height: 50%;
+  -webkit-border-radius: 50% !important;
+  -moz-border-radius: 50% !important;
+  border-radius: 50% !important;
+}
+
+.profile-usertitle {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.profile-usertitle-name {
+  color: #5a7391;
+  font-size: 16px;
+  font-weight: 600;
+  margin-bottom: 7px;
+}
+
+.profile-usertitle-job {
+  text-transform: uppercase;
+  color: #5b9bd1;
+  font-size: 12px;
+  font-weight: 600;
+  margin-bottom: 15px;
+}
+
+.profile-userbuttons {
+  text-align: center;
+  margin-top: 10px;
+}
+
+.profile-userbuttons .btn {
+  text-transform: uppercase;
+  font-size: 11px;
+  font-weight: 600;
+  padding: 6px 15px;
+  margin-right: 5px;
+}
+
+.profile-userbuttons .btn:last-child {
+  margin-right: 0px;
+}
+    
+.profile-usermenu {
+  margin-top: 30px;
+}
+
+.profile-usermenu ul li {
+  border-bottom: 1px solid #f0f4f7;
+}
+
+.profile-usermenu ul li:last-child {
+  border-bottom: none;
+}
+
+.profile-usermenu ul li a {
+  color: #93a3b5;
+  font-size: 14px;
+  font-weight: 400;
+}
+
+.profile-usermenu ul li a i {
+  margin-right: 8px;
+  font-size: 14px;
+}
+
+.profile-usermenu ul li a:hover {
+  background-color: #fafcfd;
+  color: #5b9bd1;
+}
+
+.profile-usermenu ul li.active {
+  border-bottom: none;
+}
+
+.profile-usermenu ul li.active a {
+  color: #5b9bd1;
+  background-color: #f6f9fb;
+  border-left: 2px solid #5b9bd1;
+  margin-left: -2px;
+}
+
+/* Profile Content */
+.profile-content {
+  padding: 20px;
+  background: #fff;
+  min-height: 460px;
+}
+</style>
