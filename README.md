@@ -17,8 +17,8 @@ Built in node.js, this app uses geolocation to connect students and teachers.
 * [Zain Qasmi](https://github.com/ZainQasmi)
 * [Ali Ahsan](https://github.com/aliahsan07)
 * [Nawal Khurram](https://github.com/Nawalk25)
-* [Hassaan Hasan]
-* [Abreeza Saleem]
+* Hassaan Hasan
+* [Abreeza Saleem](https://github.com/AbreezaSaleem)
 
 ## License
 
